@@ -5,8 +5,8 @@ export function Botanical({ variant = 'hero' }: { variant?: 'hero' | 'detail' })
     <rect width="600" height="700" fill="#eeeee9" /><rect width="600" height="700" fill={`url(#grain-${variant})`} />
     <circle cx="300" cy="320" r="221" fill="none" stroke="#c4c7c4" strokeWidth=".7" />
     <circle cx="300" cy="320" r="185" fill="none" stroke="#c4c7c4" strokeWidth=".5" strokeDasharray="2 7" />
-    <path d="M292 645C322 531 268 450 309 335S360 172 329 79" fill="none" stroke="#1c3a13" strokeWidth="2" />
-    <g fill="#698e79" fillOpacity=".22" stroke="#1c3a13" strokeWidth="1.1">
+    <path className="botanical-stem" d="M292 645C322 531 268 450 309 335S360 172 329 79" fill="none" stroke="#1c3a13" strokeWidth="2" />
+    <g className="botanical-leaves" fill="#698e79" fillOpacity=".22" stroke="#1c3a13" strokeWidth="1.1">
       <path d="M309 335C228 327 180 262 202 182c76 14 113 74 107 153Z" />
       <path d="M303 360c70-14 134-62 131-143-81 12-125 72-131 143Z" />
       <path d="M294 455c-93 6-159-55-164-138 83 8 148 58 164 138Z" />

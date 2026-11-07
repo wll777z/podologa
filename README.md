@@ -50,3 +50,7 @@ Ilustração botânica e símbolo: SVGs originais em `components/botanical.tsx` 
 As páginas de documentação Next.js, Tailwind e W3C foram bloqueadas pela política de saída da sessão; os links são referências oficiais e não são apresentados como conteúdo consultado. As dependências foram obtidas pelo registro oficial npm.
 
 O projeto não inclui deploy automático. O envio ao GitHub não publica o site na web.
+
+## Animações
+
+`components/motion.tsx` acrescenta movimento com APIs nativas, sem dependências adicionais: entrada gradual, revelações durante a rolagem, desenho do ramo SVG e parallax limitado a 20px. Interações de menu, FAQ e botões têm transições curtas. O conteúdo permanece disponível sem JavaScript e os efeitos são desativados com `prefers-reduced-motion`, inclusive quando a preferência muda durante a visita. A referência Seed não pôde ser inspecionada por bloqueio de rede; as animações são originais.

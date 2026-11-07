@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Motion } from '@/components/motion';
 import { Header } from '@/components/header';
 import { Arrow, Mark } from '@/components/icons';
 import { Botanical } from '@/components/botanical';
@@ -17,6 +18,7 @@ const areas = [
 export default function Home() {
   const whatsapp = whatsappUrl(clinic.contact?.whatsapp);
   return <>
+    <Motion />
     <Header name={clinic.name} />
     <main id="conteudo">
       <section id="inicio" className="hero wrap">

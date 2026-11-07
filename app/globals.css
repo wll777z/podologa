@@ -259,3 +259,18 @@ p + p { margin-top: 20px; }
 .hero .eyebrow { flex-wrap: wrap; }
 .diagonal-arrow { flex-shrink: 0; transform: rotate(-45deg); margin-left: auto; margin-top: 5px; }
 @media (max-width: 900px) and (min-width: 768px) { .hero .eyebrow { font-size: 11px; } }
+
+/* Motion complements the editorial layout without intercepting scrolling. */
+.hero-art .botanical { transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .button svg { transition: transform .35s cubic-bezier(.22,1,.36,1); }
+  .button:hover svg { transform: translateX(4px); }
+  .care-symbol { transition: transform .6s cubic-bezier(.22,1,.36,1); }
+  .care-area:hover .care-symbol { transform: translateY(-5px); }
+  .about-orbit > svg { transition: transform .8s cubic-bezier(.22,1,.36,1); }
+  .about-art:hover .about-orbit > svg { transform: rotate(-5deg); }
+  .navigation.is-open { animation: menu-enter .3s ease-out; }
+  details[open] > p { animation: faq-enter .35s ease-out; }
+  @keyframes menu-enter { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes faq-enter { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+}
