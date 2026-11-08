@@ -1,0 +1,18 @@
+{
+  "name": "sueli-terapeuta-integrativa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node tests/site.mjs && node tests/artwork.mjs",
+    "export:local": "node scripts/export-local.mjs",
+    "test:export": "node tests/local-export.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0",
+    "vite": "^7.2.2"
+  }
+}
