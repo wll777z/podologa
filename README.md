@@ -1,6 +1,6 @@
 # Sueli A. Rodrigues — Terapeuta Integrativa
 
-Site responsivo em português com visual inspirado na referência 2.AG: teal profundo, menta vivo, Inter Tight, animação interativa dos pés e identidade da profissional em creme e dourado.
+Site responsivo em português com visual inspirado na referência 2.AG: teal profundo, menta vivo, Inter Tight, ilustração interativa da orelha e animações suaves na rolagem e identidade da profissional em creme e dourado.
 
 ## Agendamento
 
@@ -44,4 +44,10 @@ Para testar a exportação: execute `PORT=5174 node dist-local/servidor.mjs` e, 
 
 As quatro artes — contato, apresentação, terapias e logo — foram **recriadas com IA a partir das referências enviadas pelo usuário**, com a maior proximidade possível. São aproximações, não arquivos originais. O retrato é uma recriação da referência. Clique nas artes para ampliar.
 
-Inter Tight: fonte do repositório oficial Google Fonts, licença em `public/fonts/OFL-InterTight.txt`. A fotografia de cuidado podológico é ilustrativa. Os materiais informativos não substituem avaliação profissional. Não foi criado um link de avaliações Google porque o endereço não foi fornecido.
+Inter Tight: fonte do repositório oficial Google Fonts, licença em `public/fonts/OFL-InterTight.txt`. A fotografia de auriculoterapia/laserterapia é ilustrativa e foi gerada com IA. Os materiais informativos não substituem avaliação profissional. Não foi criado um link de avaliações Google porque o endereço não foi fornecido.
+
+## Foco e versão atual
+
+Auriculoterapia e Laserterapia / Fotobiomodulação. Preserva o visual teal/menta da base publicada e acrescenta movimento na abertura, na ilustração auricular e nos cartões, respeitando movimento reduzido. O estudo OFFFICE foi salvo separadamente em `/workspace/design-studies/sueli-offfice-2026-11-08/`.
+
+O usuário autorizou o envio desta revisão ao GitHub em 2026-11-08. Novos estudos de design devem permanecer locais até nova autorização explícita.

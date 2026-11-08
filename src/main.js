@@ -2,20 +2,20 @@ const $=(selector,root=document)=>root.querySelector(selector);
 const $$=(selector,root=document)=>[...root.querySelectorAll(selector)];
 const icon=name=>`<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const WHATSAPP='5511995857781';
-const careNames={podologia:'cuidado podológico',reflexologia:'reflexologia podal',integrativa:'terapias integrativas',avaliacao:'uma primeira avaliação'};
+const careNames={auriculoterapia:'uma sessão de auriculoterapia',laserterapia:'uma sessão de laserterapia / fotobiomodulação',integrativa:'um atendimento de auriculoterapia ou laserterapia',domicilio:'um atendimento a domicílio',avaliacao:'uma primeira avaliação'};
 $$('[data-book]').forEach(link=>{
  link.href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Olá, Sueli! Gostaria de agendar ${careNames[link.dataset.book]||'um atendimento'}. Poderia me informar a disponibilidade e os valores?`)}`;
  link.target='_blank';link.rel='noopener';
 });
-// Illustrative foot study: the selectable points do not represent a diagnostic map.
-const grid=$('#foot-grid');let paths='';
+// Illustrative ear study: controls explain the approaches and do not represent application points.
+const grid=$('#ear-grid');let paths='';
 for(let y=70;y<=590;y+=12){const curve=Math.sin(y*.018)*10;paths+=`<path d="M100 ${y} Q250 ${y+curve} 400 ${y+8}"/>`;}
 for(let x=120;x<=390;x+=11)paths+=`<path d="M${x} 50 Q${x+50*Math.sin(x*.03)} 330 ${x-30} 600"/>`;
 grid.innerHTML=paths;grid.setAttribute('fill','none');grid.setAttribute('stroke','#6dddbd');grid.setAttribute('stroke-width','.65');grid.setAttribute('opacity','.65');
-const heroDiagram=$('.foot-diagram').cloneNode(true);heroDiagram.setAttribute('aria-hidden','true');heroDiagram.removeAttribute('role');heroDiagram.removeAttribute('aria-label');heroDiagram.innerHTML=heroDiagram.innerHTML.replaceAll('foot-clip','hero-foot-clip').replaceAll('foot-outline','hero-foot-outline');$('.hero-mesh').append(heroDiagram);
+const heroDiagram=$('.ear-diagram').cloneNode(true);heroDiagram.setAttribute('aria-hidden','true');heroDiagram.removeAttribute('role');heroDiagram.removeAttribute('aria-label');heroDiagram.innerHTML=heroDiagram.innerHTML.replaceAll('ear-clip','hero-ear-clip').replaceAll('ear-outline','hero-ear-outline').replaceAll('ear-grid','hero-ear-grid');$('.hero-mesh').append(heroDiagram);
 const motionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('running-off',!entry.isIntersecting)),{threshold:.05});$$('.care-map,.hero-mesh').forEach(el=>motionObserver.observe(el));
 addEventListener('visibilitychange',()=>document.body.classList.toggle('tab-hidden',document.hidden));
-const pointText=[['Unhas e pele','Observar mudanças e cuidar da higiene faz parte da prevenção. Na avaliação, cada necessidade recebe atenção individual.'],['Apoio e conforto','Seus pés sustentam o movimento do dia a dia. A atenção às áreas de pressão e aos hábitos de cuidado começa com uma avaliação.'],['Toque e relaxamento','A reflexologia propõe uma pausa de atenção ao corpo por meio do toque nos pés. Uma prática complementar de bem-estar.']];
+const pointText=[['Auriculoterapia','A abordagem utiliza estímulos em pontos específicos do pavilhão auricular. A indicação e a aplicação são individuais.'],['Laserterapia','A fotobiomodulação utiliza luz de baixa intensidade. Os parâmetros e a indicação dependem da avaliação e do protocolo profissional.'],['Avaliação individual','O primeiro encontro começa com a escuta. Converse sobre suas necessidades e esclareça as possibilidades de atendimento.']];
 $$('[data-point]').forEach(button=>button.addEventListener('click',()=>{
  const index=Number(button.dataset.point);$$('[data-point]').forEach(el=>{const active=Number(el.dataset.point)===index;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));});
  $('.point-number').textContent=`0${index+1} / 03`;$('.point-content h3').textContent=pointText[index][0];$('.point-content p').textContent=pointText[index][1];
@@ -51,3 +51,19 @@ document.addEventListener('click',event=>{
  close.addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>{dialog.remove();if(!wasLocked)document.body.classList.remove('locked');link.focus({preventScroll:true});});
  dialog.showModal();close.focus();
 });
+// Motion from the previous studies, kept inside the original site composition.
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+let motionQueued=false;
+function drawMotion(){
+ motionQueued=false;if(reducedMotion.matches)return;
+ const scroll=window.scrollY,hero=$('.hero'),heroRect=hero.getBoundingClientRect();
+ if(heroRect.bottom>0&&heroRect.top<innerHeight){
+  const travel=Math.max(0,Math.min(1,scroll/Math.max(1,hero.offsetHeight)));
+  hero.style.setProperty('--hero-image-shift',`${travel*24}px`);hero.style.setProperty('--mesh-shift',`${travel*35}px`);hero.style.setProperty('--mesh-angle',`${travel*8}deg`);
+  $$('.headline-line').forEach((line,i)=>line.style.setProperty('--headline-shift',`${travel*(i===1?-12:8)}px`));
+ }
+ const approach=$('#abordagem'),rect=approach.getBoundingClientRect();
+ if(rect.bottom>0&&rect.top<innerHeight){const progress=Math.max(0,Math.min(1,(innerHeight-rect.top)/(innerHeight+rect.height)));approach.style.setProperty('--approach-shift',`${(progress-.5)*18}px`);}
+}
+function requestMotion(){if(motionQueued||document.hidden)return;motionQueued=true;requestAnimationFrame(drawMotion);}
+addEventListener('scroll',requestMotion,{passive:true});addEventListener('resize',requestMotion,{passive:true});reducedMotion.addEventListener('change',requestMotion);addEventListener('visibilitychange',()=>{if(!document.hidden)requestMotion();});requestMotion();

@@ -10,6 +10,6 @@ try{
  assert.equal(await page.locator('form,[data-panel]').count(),0);
  const href=await page.locator('[data-book="integrativa"]').first().getAttribute('href');assert.match(href,/https:\/\/wa.me\/5511995857781/);
  await page.locator('#sobre .art-link').click();await page.getByRole('dialog').waitFor();await page.getByRole('dialog').locator('img').evaluate(img=>img.decode());await page.keyboard.press('Escape');assert.equal(await page.getByRole('dialog').count(),0);
- await page.locator('.point-controls [data-point="1"]').click();assert.match(await page.locator('.point-content h3').innerText(),/Apoio e conforto/);
+ await page.locator('.point-controls [data-point="1"]').click();assert.match(await page.locator('.point-content h3').innerText(),/Laserterapia/);
  assert.deepEqual(errors,[]);console.log('PASS: HTML independente, imagens incorporadas, ampliação offline, WhatsApp e animação interativa');
 }finally{await browser.close()}

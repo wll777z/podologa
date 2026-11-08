@@ -1,26 +1,23 @@
-# Sueli Terapeuta Integrativa
+# Sueli A. Rodrigues — Terapeuta Integrativa
 <!-- impeccable:product-schema 1 -->
 
-## Platform
-web
+## Plataforma e stack
+Site estático responsivo em português, Vite + HTML/CSS/JavaScript. Sem formulário, painel, banco de dados ou novos pedidos armazenados no navegador.
 
-## Stack
-Existing Vite + HTML/CSS/JavaScript. Local browser persistence; no shared server database.
+## Objetivo
+Apresentar o atendimento de Auriculoterapia e Laserterapia / Fotobiomodulação e facilitar o contato direto pelo WhatsApp. O foco não inclui podologia.
 
-## Users
-People exploring podology and integrative therapies; Sueli reviewing local appointment requests.
+## Dados confirmados
+- Sueli A. Rodrigues, Terapeuta Integrativa.
+- WhatsApp (11) 99585-7781.
+- Instagram @sueliarodrigues.terapeuta.
+- Atendimento a domicílio na Zona Sul de São Paulo.
 
-## Product Purpose
-Present Sueli's approach, explain care options and enable a local appointment-request workflow.
+## Comportamento
+Botões abrem o WhatsApp com a mensagem correspondente ao atendimento. O visitante confirma o envio no próprio serviço. Artes podem ser ampliadas. A ilustração interativa explica as abordagens; não representa pontos de aplicação.
 
-## Capabilities and Constraints
-The user selected a website with appointment requests and a local management panel. Store requests locally in this browser; make that limitation explicit before submitting and after saving. No automatic transmission, invented contact details, prices, qualifications, testimonials or statistics. Name supplied: Sueli Terapeuta Integrativa. City, address and WhatsApp are unknown. No clinical notes or diagnoses collected. Settings may supply a real WhatsApp later.
+## Direção e limites
+Manter a composição teal/menta da versão publicada no GitHub e incorporar movimentos dos estudos anteriores. Não inventar preços, depoimentos, resultados, qualificações ou contatos. Os materiais foram recriados com IA, conforme autorizado; são aproximações das referências.
 
-## Brand Commitments
-Follow both supplied 2.AG references: deep teal #244d54, mint #2ecea0, white, Inter Tight, split editorial hero, pill actions, fine dividers, no shadows. Portuguese copy. Vivid, well-composed, content-filled presentation with purposeful motion. The brief is the visual authority.
-
-## Evidence on Hand
-Two user-provided text files and 2.AG screenshots in this chat. Photographic assets may be generated. Images must not imply a real portrait of Sueli. Real service offering and contact details require confirmation before public launch.
-
-## Atualização confirmada em 2026-11-08
-O usuário forneceu materiais de Sueli A. Rodrigues com WhatsApp (11) 99585-7781, Instagram @sueliarodrigues.terapeuta e atendimento a domicílio na Zona Sul de São Paulo. Pediu recriação dos materiais e uso da última imagem como logo. Depois substituiu o escopo de agendamento local por WhatsApp: formulário e painel foram removidos. A decisão atual substitui as descrições anteriores de persistência e campos não informados.
+## Publicação
+Envio desta revisão ao GitHub autorizado pelo usuário em 2026-11-08. Novos estudos continuam dependendo de autorização explícita. Estudo OFFFICE preservado separadamente em /workspace/design-studies/sueli-offfice-2026-11-08/.

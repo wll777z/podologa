@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node tests/site.mjs && node tests/artwork.mjs",
+    "test": "node tests/site.mjs && node tests/artwork.mjs && node tests/focus.mjs",
     "export:local": "node scripts/export-local.mjs",
     "test:export": "node tests/local-export.mjs"
   },
